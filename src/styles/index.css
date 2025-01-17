@@ -1,0 +1,52 @@
+@import url('buttons.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333; /* Asegura que el pseudo-elemento se posicione relativo al body */
+    overflow: hidden;   
+  }
+  body::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-150%) translateX(20%) rotate(350deg); /* Rota la imagen 45 grados */
+    width: 350px;
+    height: 350px;
+    background-image: url('../assets/images/pokeball.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+
+
+/* Media query para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    body::after {
+      width: 250px; /* Ajusta el tamaño para pantallas pequeñas */
+      height: 250px;
+      transform: translateY(-120%) translateX(10%) rotate(350deg); /* Ajusta la posición y rotación si es necesario */
+    }
+  }
+  
+  /* Media query para pantallas medianas (tabletas) */
+  @media (max-width: 1024px) {
+    body::after {
+      width: 300px; /* Ajusta el tamaño para pantallas medianas */
+      height: 300px;
+      transform: translateY(-130%) translateX(15%) rotate(350deg); /* Ajusta la posición y rotación si es necesario */
+    }
+  }
+  
+  /* Media query para pantallas grandes (escritorios) */
+  @media (min-width: 1025px) {
+    body::after {
+      width: 400px; /* Tamaño para pantallas grandes */
+      height: 400px;
+      transform: translateY(-150%) translateX(20%) rotate(350deg); /* Mantiene el tamaño y la posición original */
+    }
+  }

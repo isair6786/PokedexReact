@@ -1,0 +1,19 @@
+.buttonOptions{
+    position: relative;
+    border-radius: 60px;
+    overflow: hidden;  
+}
+.buttonOptions::before {
+    content: '';
+    position: absolute;
+    opacity: 30%;
+    top: 50%;
+    left: 10px; /* Ajusta la posición de la imagen */
+    transform: translateY(-50%) translateX(100%) rotate(325deg); /* Coloca la imagen centrada verticalmente */
+    width: 150px; /* Ajusta el tamaño de la imagen */
+    height: 150px;
+    background-image: url('../assets/images/game.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1; /* Asegura que esté visible dentro del botón */
+  }
